@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
 app.use(express.json());
+
+app.use(cors()); // api bisa diakses dibeda server/domain
 
 // Ini akan menangkap domain.com/api/hello
 app.get('/api/hello', (req, res) => {
